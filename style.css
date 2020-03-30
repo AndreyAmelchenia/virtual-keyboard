@@ -1,0 +1,71 @@
+/* body{
+    
+    margin: 0 auto;
+} */
+.overlay
+{
+    width: 900px;
+    margin: 0 auto;
+
+}
+.input
+{
+    width: calc(700px - 2px);
+    
+}
+.keyboard{
+    display: flex;
+    width: calc(15 * 50px + 14 * 3.5px);
+    height: calc(5 * 50px + 4 * 7px) ;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+
+}
+.button{
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 3.5px;
+    width: 50px;
+    background: grey;
+    /* margin-bottom: 2px; */
+    height: 50px;
+}
+.button_backspace{
+    background: rgb(34, 32, 32);
+    width: calc(50px * 2 + 3.5px * 3);
+}
+#button_active {
+    border: grey solid 2px;
+    background: rgb(194, 58, 58);
+}
+.button_tab{
+    background: rgb(34, 32, 32);
+    width: calc(50px + 3.5px);
+}
+.button_color{
+    background: rgb(34, 32, 32);
+}
+.button_caps_lock{
+    background: rgb(34, 32, 32);
+    width: calc(50px * 2 + 3.5px * 3);
+}
+.button_enter{
+    background: rgb(34, 32, 32);
+    width: calc(50px * 2 - 3.5px);
+}
+.button_shift{
+    background: rgb(34, 32, 32);
+    width: calc(50px * 2 + 3.5px * 3);
+}
+.button_ctrl{
+    background: rgb(34, 32, 32);
+    width: calc(50px * 1.5 + 3.5px);
+}
+.button_space{
+    background: rgb(34, 32, 32);
+    width: calc(50px * 6 + 3.5px * 5);
+}
