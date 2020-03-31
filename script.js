@@ -432,7 +432,7 @@ const keyboard = [
         id : 62,
         keyRu : '←',
         keyEn : '←',
-        code : 'ArrowLeft"',
+        code : 'ArrowLeft',
         classButton : ['button']
     },
     {
@@ -451,19 +451,42 @@ const keyboard = [
     }
 
 ]
-
+let CL = false;
+let SH = false;
+let language = localStorage.getItem('lang')
 window.onload = () => {
-    
-    loadBody();
+    if(language){
+        if(language === 'En'){
+            loadBodyEn();
+        } else if (language === 'Ru') {
+            loadBodyRu();
+        }
+    } else {
+        loadBodyEn();
+        language = 'En'
+    }
     click();
-    clickBack();
+    keyboardDown();
+    keyboardUp();
 }
 // проверка раскладки
 
+const loadBodyRu= () =>{
+    document.body.innerHTML = `<section class="overlay"></section>`;
+    document.querySelector('.overlay').innerHTML = `<textarea name="" class="input" cols="30" rows="10"></textarea>
+    <div class="keyboard"></div>`;
+    keyboard.forEach(el => {
+        let classButton = '';
+        el.classButton.forEach(el => {
+            classButton += ` ${el}`;
+        } )
+        document.querySelector('.keyboard').innerHTML += `<div class='${classButton}' data-code=${el.code} >${el.keyRu}</div>`
+    })
+
+}
 
 
-
-const loadBody= () =>{
+const loadBodyEn= () =>{
     document.body.innerHTML = `<section class="overlay"></section>`;
     document.querySelector('.overlay').innerHTML = `<textarea name="" class="input" cols="30" rows="10"></textarea>
     <div class="keyboard"></div>`;
@@ -478,34 +501,120 @@ const loadBody= () =>{
 }
 
 const click = () => {
-    document.querySelector('.keyboard').addEventListener('click', (event) =>{
-        document.querySelector('.input').value += event.target.innerText;
-        event.target.id = 'button_active';
-        setTimeout(() => {
-            event.target.id = '';
-          },300);
-    } )
-}
-
-document.addEventListener('keydown', (event) =>{
-    console.log(event);
     document.querySelectorAll('.button').forEach(el => {
-        if(el.dataset.code === event.code){
-            el.id = 'button_active';
-            setTimeout(() => {
-                el.id = '';
-            },300);
-        }
-        } )
-        
-    })
-
-    const clickBack = () => {
-        document.querySelector('.keyboard').addEventListener('click', (event) =>{
-            if(event.target.classList.contains('button_backspace')){
-                console.log('hello')
+        el.addEventListener('click', (event) =>{
+            if(event.target.innerHTML != 'Shift'){
+                buttonDown(event.target);
+                //console.log(event.code);
+                event.preventDefault();
+            } else if (event.target.innerHTML === 'Shift'){
+                buttonDown(event.target);
+                SH = true; 
             }
             
         } )
-    }
+    })
+}
+    
+    
+const keyboardDown = () => {
+    document.addEventListener('keydown', (event) =>{
+        //console.log(event);
+        document.querySelectorAll('.button').forEach(el => {
+            if(el.dataset.code === event.code){
+                if(el.innerHTML != 'Shift'){
+                    buttonDown(el);
+                    //console.log(event.code);
+                    event.preventDefault();
+                } else {
+                    buttonDown(el);
+                   SH = true; 
+                }
+            }
+            } )
+            
+        })
+}
 
+const keyboardUp = () => {
+    document.addEventListener('keyup', () =>{
+        //console.log(event);
+        document.querySelectorAll('.button').forEach(el => {
+            if(el.innerHTML === 'Shift'){
+                // console.log('dlhehbvsdjvbh');
+                //SH = false;
+            }
+            } )
+            
+        }) 
+}
+    
+const buttonDown = (el) => {
+     if (el.dataset.code === 'CapsLock'){
+        if(el.id === 'button_active'){
+            CL = false;
+           setTimeout(() => {
+               el.id = '';
+           },300); 
+       } else {
+           CL = true;
+           el.id = 'button_active';
+           
+       }
+     } else if (el.dataset.code.slice(0,-1) === 'Key'){
+        if(CL || SH){
+            document.querySelector('.input').value += el.innerText.toUpperCase();
+            el.id = 'button_active';
+            setTimeout(() => {
+                el.id = '';
+            },300); 
+        } else {
+            document.querySelector('.input').value += el.innerText;
+            el.id = 'button_active';
+            setTimeout(() => {
+                el.id = '';
+            },300); 
+        }
+    } else if (el.innerHTML === 'Shift'){
+        el.id = 'button_active';
+        setTimeout(() => {
+            el.id = '';
+        },300);
+     } else {
+        document.querySelector('.input').value += el.innerText;
+        el.id = 'button_active';
+        setTimeout(() => {
+            el.id = '';
+        },300);
+     }
+    // switch(el.dataset.code){
+    //     case 'CapsLock':
+            
+    //         break;
+    //     case ('Key' + el.innerText.toUpperCase()):
+            
+    //         break;
+    //     default :
+            
+    //         break;
+    // }
+}
+
+
+
+    // const clickBack = () => {
+    //     document.querySelectorAll('.button').addEventListener('click', (event) =>{
+    //         if(event.target.classList.contains('button_backspace')){
+    //             //console.log('hello')
+    //         }
+            
+    //     } )
+    // }
+
+    //if(language === 'En'){
+        //     language = 'Ru';
+        //     localStorage.setItem('lang', language)
+        // } else if (language === 'Ru') {
+        //     language = 'En';
+        //     localStorage.setItem('lang', language)
+        // } 
