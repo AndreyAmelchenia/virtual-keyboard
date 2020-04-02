@@ -455,7 +455,7 @@ const keyboard = [
 
 let CL = false;
 let SH = false;
-//const codes =[];
+let pressed = new Set();
 let language = localStorage.getItem('lang')
 window.onload = () => {
     if(language){
@@ -468,11 +468,8 @@ window.onload = () => {
         loadBodyEn();
         language = 'En'
     }
-    // document.querySelectorAll('.button').forEach(el => codes.push(el.dataset.code));
-    // console.log(codes);
     click();
     keyBoard();
-    //keyboardUp();
 }
 
 
@@ -507,239 +504,190 @@ const loadBodyEn= () =>{
 
 
 
-
+ 
 const click = () => {
-    let pressedMouse = new Set();
-    document.querySelectorAll('.button').forEach(el => {
-        el.addEventListener('mousedown', (event) =>{
-            pressedMouse.add(event.target.dataset.code);
-            // console.log(pressedMouse);
-            // if (CL){
-            //     pressedMouse.delete(event.target.dataset.code);
-            //     setTimeout(() => {
-            //         event.target.id = '';
-            //     },300);
-            //     CL = false;
-            // } else {
-            //     if (event.target.dataset.code === 'CapsLock'){
-            //         CL = true;
-            //     }
-            // }
-        //     for (let code of pressedMouse) {
-        //         if (code === 'CapsLock'){
-        //             if(event.target.id === 'button_active'){
-        //                 CL = false;
-        //                 setTimeout(() => {
-        //                     el.id = '';
-        //                 },300);
-        //                 console.log(CL)
-        //             } else {
-        //                 CL = true;
-        //                 // el.id = 'button_active';
-        //                 console.log(CL)
-        //             }
-        //         }   
-        //             if(event.target.dataset.code === code){
-        //                 el.id = 'button_active';
-        //             }
-        //         buttonDown(event.target)
-        //     }  
-            
-        //     //buttonDown(event.target)    
-        //    //buttonDown(event.target);
-        })
-        el.addEventListener('mouseup', (event) => {
-            document.querySelectorAll('.button').forEach(el => {
-                if(el.dataset.code === event.target.dataset.code){
-                    if (CL){
-                        if (event.code === 'CapsLock'){
-                            pressedMouse.delete(event.target.dataset.code);
-                            setTimeout(() => {
-                                el.id = '';
-                            },300);
-                            CL = false;
+    //const elemMouse = ;
+   // document.querySelectorAll('.button').forEach(el => {
+            //down
+        document.querySelector('.keyboard').addEventListener('mousedown', (event) =>{
+            if (event.target.classList.contains('button')) {
+                switch (event.target.dataset.code) {
+                    case 'CapsLock':
+                        if(CL){
+                            CL =false;
                         } else {
-                            pressedMouse.delete(event.target.dataset.code);
-                            setTimeout(() => {
-                                el.id = '';
-                            },300);
-                        }
-                    } else {
-                        if (event.target.dataset.code === 'CapsLock'){
                             CL = true;
-                        } else {
-                            pressedMouse.delete(event.code);
-                            setTimeout(() => {
-                                el.id = '';
-                            },300);
                         }
-                    }
+                        break;
+                    case 'ShiftLeft':
+                        SH = true;
+                        break;
+                    case 'ShiftRight':
+                        SH = true;
+                        break;
+                    default:
+                        pressed.add(event.target.dataset.code);
+                        buttonDown(event.target.dataset);
                 }
-                // if(el.dataset.code === event.target.dataset.code && el.dataset.code != 'CapsLock'){
-                //     setTimeout(() => {
-                //         el.id = '';
-                //     },300);
-                //     pressedMouse.delete(event.target.dataset.code);
-                // }
-            })
-            console.log(pressedMouse)
-        });
+                // console.log(pressed);
+                //pressed.add(event.target.dataset.code);
+               // buttonDown(pressed);
+            }
+        })
+        //up
+        document.querySelector('.keyboard').addEventListener('mouseup', (event) => {
+            if (event.target.classList.contains('button')) {
+                // console.log('CL', CL);
+                // console.log('SH', SH);
+                document.querySelectorAll('.button').forEach(el => {
+                    if (event.target.dataset.code === 'ShiftLeft' || event.target.dataset.code === 'ShiftRight'){
+                        SH = false;
+                    }
+                    if(el.dataset.code === event.target.dataset.code){
+                        // if(CL){
+                        //if (event.target.dataset.code === 'CapsLock'){
+                        //         CL = false;
+                        //     }
+                        // }
+                        pressed.delete(event.target.dataset.code);
+                        //SH = false;
+                        // if (CL){
+                        //     if (event.target.dataset.code === 'CapsLock'){
+                        //         pressed.delete(event.target.dataset.code);
+                        //         setTimeout(() => {
+                        //             el.id = '';
+                        //         },300);
+                        //         CL = false;
+                        //     } else {
+                        //         pressed.delete(event.target.dataset.code);
+                        //         setTimeout(() => {
+                        //             el.id = '';
+                        //         },300);
+                        //     }
+                        // } else {
+                        //     if (event.target.dataset.code === 'CapsLock'){
+                        //         CL = true;
+                        //     } else {
+                        //         pressed.delete(event.target.dataset.code);
+                        //         setTimeout(() => {
+                        //             el.id = '';
+                        //         },300);
+                        //     }
+                        // }
+                    }
+                })
+                // console.log('CL', CL);
+                // console.log('SH', SH);
+                // console.log(pressed);
+            }
+        })
         
-    })
+   // })
     
 }
 
   
     
 const keyBoard = () => {
-    let pressed = new Set();
+    //down
     document.addEventListener('keydown', (event) =>{
-        
-        pressed.add(event.code);
-        //console.log(pressed);
-        // if (CL){
-        //     pressed.delete(event.code);
-        //     CL = false;
-        // } else {
-        //     if (event.code === 'CapsLock'){
-        //         CL = true;
-        //     }
-        // }
-        //console.log(pressed);
-        //console.log(CL);
-        event.preventDefault();
-
-        //     document.querySelectorAll('.button').forEach(el => {
-        //         if (code === 'CapsLock'){
-        //             if(el.id === 'button_active'){
-        //                 CL = false;
-        //                 setTimeout(() => {
-        //                     el.id = '';
-        //                 },300);
-        //                 console.log(CL)
-        //             } else {
-        //                 CL = true;
-        //                 // el.id = 'button_active';
-        //                 console.log(CL)
-        //             }
-        //         }   
-        //         if(el.dataset.code === code){
-        //            // document.querySelector('.input').value += el.innerText;
-        //             el.id = 'button_active';
-        //         }
-                
-        //     })
-           
-        // } 
-        // buttonDown(event)   
-    })
-    document.addEventListener('keyup', (event) => {
-        document.querySelectorAll('.button').forEach(el => {
-            if(el.dataset.code === event.code){
-                if (CL){
-                    if (event.code === 'CapsLock'){
-                        pressed.delete(event.code);
-                        setTimeout(() => {
-                            el.id = '';
-                        },300);
-                        CL = false;
-                    } else {
-                        pressed.delete(event.code);
-                        setTimeout(() => {
-                            el.id = '';
-                        },300);
-                    }
+        switch (event.code) {
+            case 'CapsLock':
+                if(CL){
+                    CL =false;
                 } else {
-                    if (event.code === 'CapsLock'){
-                        CL = true;
-                    } else {
-                        pressed.delete(event.code);
-                        setTimeout(() => {
-                            el.id = '';
-                        },300);
-                    }
+                    CL = true;
                 }
+                break;
+            case 'ShiftLeft':
+                SH = true;
+                break;
+            case 'ShiftRight':
+                SH = true;
+                break;
+            default:
+                
+                pressed.add(event.code);
+                buttonDown(event);
+        }
+        // console.log(pressed);
+        event.preventDefault();
+       
+    })
+
+    //up
+    document.addEventListener('keyup', (event) => {
+        // console.log('CL', CL);
+        // console.log('SH', SH);
+        document.querySelectorAll('.button').forEach(el => {
+            if (event.code === 'ShiftLeft' || event.code === 'ShiftRight'){
+                SH = false;
+            }
+            if(el.dataset.code === event.code){
+            //     if (CL){
+            //         if (event.code === 'CapsLock'){
+                        pressed.delete(event.code);
+                        //SH = false;
+            //             setTimeout(() => {
+            //                 el.id = '';
+            //             },300);
+            //             CL = false;
+            //         } else {
+            //             pressed.delete(event.code);
+            //             setTimeout(() => {
+            //                 el.id = '';
+            //             },300);
+            //         }
+            //     } else {
+            //         if (event.code === 'CapsLock'){
+            //             CL = true;
+            //         } else {
+            //             pressed.delete(event.code);
+            //             setTimeout(() => {
+            //                 el.id = '';
+            //             },300);
+            //         }
+            //     }
             }
         })
-        console.log(CL);
-        console.log(pressed);
+        // console.log('CL', CL);
+        // console.log('SH', SH);
+        // console.log(pressed);
     });
-    
 }
 
-// const keyboardUp = () => {
-//     document.addEventListener('keyup', () =>{
-//         //console.log(event);
-//         document.querySelectorAll('.button').forEach(el => {
-//             if(el.innerHTML === 'Shift'){
-//                 // console.log('dlhehbvsdjvbh');
-//                 //SH = false;
-//             }
-//             } )
-            
-//         }) 
-// }
-    
 
-
-
-
-
-
-
-const buttonDown = (el, arr ) => {
-     
-     if (el.dataset.code.slice(0,-1) === 'Key'){
-        if(CL || SH){
-            //console.log(CL)
-            document.querySelector('.input').value += el.innerText.toUpperCase();
-           // el.id = 'button_active';
-            
-        } else {
-            document.querySelector('.input').value += el.innerText;
-           // el.id = 'button_active';
-        }   
-    }
-
-    //  else if (el.innerHTML === 'Shift'){
-    //     SH = true;
-    //    // el.id = 'button_active';
-    // } else{
-    //     // SH = false;
-    // }
-    // //  } else {
-    //     document.querySelector('.input').value += el.innerText;
-    //   //  el.id = 'button_active';
+const buttonDown = (event) => {
+    // pressed.forEach(code => {
+    //     if(code === 'ShiftLeft' || code === 'ShiftRight'){
+    //         el.id = 'button_active';
+    //         document.querySelector('.input').value += el.innerText;
+    //     }
+    // })
+    document.querySelectorAll('.button').forEach(el => {
         
-    //  }
-    // switch(el.dataset.code){
-    //     case 'CapsLock':
+            if(el.dataset.code === event.code){
+                if (CL || SH){
+                   return document.querySelector('.input').value += el.innerText.toUpperCase();
+                } else {
+                    return document.querySelector('.input').value += el.innerText;
+                }
+            }
+      
+
+
+    })
+}       
+
+
+//if (el.dataset.code.slice(0,-1) === 'Key'){
+    //     if(CL || SH){
+    //         //console.log(CL)
+    //         document.querySelector('.input').value += el.innerText.toUpperCase();
+    //        // el.id = 'button_active';
             
-    //         break;
-    //     case ('Key' + el.innerText.toUpperCase()):
-            
-    //         break;
-    //     default :
-            
-    //         break;
+    //     } else {
+    //         document.querySelector('.input').value += el.innerText;
+    //        // el.id = 'button_active';
+    //     }   
     // }
-}
-
-
-
-    // const clickBack = () => {
-    //     document.querySelectorAll('.button').addEventListener('click', (event) =>{
-    //         if(event.target.classList.contains('button_backspace')){
-    //             //console.log('hello')
-    //         }
-            
-    //     } )
-    // }
-
-    //if(language === 'En'){
-        //     language = 'Ru';
-        //     localStorage.setItem('lang', language)
-        // } else if (language === 'Ru') {
-        //     language = 'En';
-        //     localStorage.setItem('lang', language)
-        // } 
