@@ -404,7 +404,7 @@ const keyboard = [
         id : 58,
         keyRu : 'Alt',
         keyEn : 'Alt',
-        code : 'AltRight',
+        code : 'AltLeft',
         classButton : ['button']
     },
     {
@@ -451,8 +451,11 @@ const keyboard = [
     }
 
 ]
+
+
 let CL = false;
 let SH = false;
+//const codes =[];
 let language = localStorage.getItem('lang')
 window.onload = () => {
     if(language){
@@ -465,11 +468,13 @@ window.onload = () => {
         loadBodyEn();
         language = 'En'
     }
+    // document.querySelectorAll('.button').forEach(el => codes.push(el.dataset.code));
+    // console.log(codes);
     click();
-    keyboardDown();
-    keyboardUp();
+    keyBoard();
+    //keyboardUp();
 }
-// проверка раскладки
+
 
 const loadBodyRu= () =>{
     document.body.innerHTML = `<section class="overlay"></section>`;
@@ -500,93 +505,213 @@ const loadBodyEn= () =>{
 
 }
 
+
+
+
 const click = () => {
+    let pressedMouse = new Set();
     document.querySelectorAll('.button').forEach(el => {
-        el.addEventListener('click', (event) =>{
-            if(event.target.innerHTML != 'Shift'){
-                buttonDown(event.target);
-                //console.log(event.code);
-                event.preventDefault();
-            } else if (event.target.innerHTML === 'Shift'){
-                buttonDown(event.target);
-                SH = true; 
-            }
+        el.addEventListener('mousedown', (event) =>{
+            pressedMouse.add(event.target.dataset.code);
+            // console.log(pressedMouse);
+            // if (CL){
+            //     pressedMouse.delete(event.target.dataset.code);
+            //     setTimeout(() => {
+            //         event.target.id = '';
+            //     },300);
+            //     CL = false;
+            // } else {
+            //     if (event.target.dataset.code === 'CapsLock'){
+            //         CL = true;
+            //     }
+            // }
+        //     for (let code of pressedMouse) {
+        //         if (code === 'CapsLock'){
+        //             if(event.target.id === 'button_active'){
+        //                 CL = false;
+        //                 setTimeout(() => {
+        //                     el.id = '';
+        //                 },300);
+        //                 console.log(CL)
+        //             } else {
+        //                 CL = true;
+        //                 // el.id = 'button_active';
+        //                 console.log(CL)
+        //             }
+        //         }   
+        //             if(event.target.dataset.code === code){
+        //                 el.id = 'button_active';
+        //             }
+        //         buttonDown(event.target)
+        //     }  
             
-        } )
-    })
-}
-    
-    
-const keyboardDown = () => {
-    document.addEventListener('keydown', (event) =>{
-        //console.log(event);
-        document.querySelectorAll('.button').forEach(el => {
-            if(el.dataset.code === event.code){
-                if(el.innerHTML != 'Shift'){
-                    buttonDown(el);
-                    //console.log(event.code);
-                    event.preventDefault();
-                } else {
-                    buttonDown(el);
-                   SH = true; 
-                }
-            }
-            } )
-            
+        //     //buttonDown(event.target)    
+        //    //buttonDown(event.target);
         })
+        el.addEventListener('mouseup', (event) => {
+            document.querySelectorAll('.button').forEach(el => {
+                if(el.dataset.code === event.target.dataset.code){
+                    if (CL){
+                        if (event.code === 'CapsLock'){
+                            pressedMouse.delete(event.target.dataset.code);
+                            setTimeout(() => {
+                                el.id = '';
+                            },300);
+                            CL = false;
+                        } else {
+                            pressedMouse.delete(event.target.dataset.code);
+                            setTimeout(() => {
+                                el.id = '';
+                            },300);
+                        }
+                    } else {
+                        if (event.target.dataset.code === 'CapsLock'){
+                            CL = true;
+                        } else {
+                            pressedMouse.delete(event.code);
+                            setTimeout(() => {
+                                el.id = '';
+                            },300);
+                        }
+                    }
+                }
+                // if(el.dataset.code === event.target.dataset.code && el.dataset.code != 'CapsLock'){
+                //     setTimeout(() => {
+                //         el.id = '';
+                //     },300);
+                //     pressedMouse.delete(event.target.dataset.code);
+                // }
+            })
+            console.log(pressedMouse)
+        });
+        
+    })
+    
 }
 
-const keyboardUp = () => {
-    document.addEventListener('keyup', () =>{
-        //console.log(event);
-        document.querySelectorAll('.button').forEach(el => {
-            if(el.innerHTML === 'Shift'){
-                // console.log('dlhehbvsdjvbh');
-                //SH = false;
-            }
-            } )
-            
-        }) 
-}
+  
     
-const buttonDown = (el) => {
-     if (el.dataset.code === 'CapsLock'){
-        if(el.id === 'button_active'){
-            CL = false;
-           setTimeout(() => {
-               el.id = '';
-           },300); 
-       } else {
-           CL = true;
-           el.id = 'button_active';
+const keyBoard = () => {
+    let pressed = new Set();
+    document.addEventListener('keydown', (event) =>{
+        
+        pressed.add(event.code);
+        //console.log(pressed);
+        // if (CL){
+        //     pressed.delete(event.code);
+        //     CL = false;
+        // } else {
+        //     if (event.code === 'CapsLock'){
+        //         CL = true;
+        //     }
+        // }
+        //console.log(pressed);
+        //console.log(CL);
+        event.preventDefault();
+
+        //     document.querySelectorAll('.button').forEach(el => {
+        //         if (code === 'CapsLock'){
+        //             if(el.id === 'button_active'){
+        //                 CL = false;
+        //                 setTimeout(() => {
+        //                     el.id = '';
+        //                 },300);
+        //                 console.log(CL)
+        //             } else {
+        //                 CL = true;
+        //                 // el.id = 'button_active';
+        //                 console.log(CL)
+        //             }
+        //         }   
+        //         if(el.dataset.code === code){
+        //            // document.querySelector('.input').value += el.innerText;
+        //             el.id = 'button_active';
+        //         }
+                
+        //     })
            
-       }
-     } else if (el.dataset.code.slice(0,-1) === 'Key'){
+        // } 
+        // buttonDown(event)   
+    })
+    document.addEventListener('keyup', (event) => {
+        document.querySelectorAll('.button').forEach(el => {
+            if(el.dataset.code === event.code){
+                if (CL){
+                    if (event.code === 'CapsLock'){
+                        pressed.delete(event.code);
+                        setTimeout(() => {
+                            el.id = '';
+                        },300);
+                        CL = false;
+                    } else {
+                        pressed.delete(event.code);
+                        setTimeout(() => {
+                            el.id = '';
+                        },300);
+                    }
+                } else {
+                    if (event.code === 'CapsLock'){
+                        CL = true;
+                    } else {
+                        pressed.delete(event.code);
+                        setTimeout(() => {
+                            el.id = '';
+                        },300);
+                    }
+                }
+            }
+        })
+        console.log(CL);
+        console.log(pressed);
+    });
+    
+}
+
+// const keyboardUp = () => {
+//     document.addEventListener('keyup', () =>{
+//         //console.log(event);
+//         document.querySelectorAll('.button').forEach(el => {
+//             if(el.innerHTML === 'Shift'){
+//                 // console.log('dlhehbvsdjvbh');
+//                 //SH = false;
+//             }
+//             } )
+            
+//         }) 
+// }
+    
+
+
+
+
+
+
+
+const buttonDown = (el, arr ) => {
+     
+     if (el.dataset.code.slice(0,-1) === 'Key'){
         if(CL || SH){
+            //console.log(CL)
             document.querySelector('.input').value += el.innerText.toUpperCase();
-            el.id = 'button_active';
-            setTimeout(() => {
-                el.id = '';
-            },300); 
+           // el.id = 'button_active';
+            
         } else {
             document.querySelector('.input').value += el.innerText;
-            el.id = 'button_active';
-            setTimeout(() => {
-                el.id = '';
-            },300); 
-        }
-    } else if (el.innerHTML === 'Shift'){
-        el.id = 'button_active';
-        setTimeout(() => {
-            el.id = '';
-        },300);
-     } else {
-        document.querySelector('.input').value += el.innerText;
-        el.id = 'button_active';
-        setTimeout(() => {
-            el.id = '';
-        },300);
-     }
+           // el.id = 'button_active';
+        }   
+    }
+
+    //  else if (el.innerHTML === 'Shift'){
+    //     SH = true;
+    //    // el.id = 'button_active';
+    // } else{
+    //     // SH = false;
+    // }
+    // //  } else {
+    //     document.querySelector('.input').value += el.innerText;
+    //   //  el.id = 'button_active';
+        
+    //  }
     // switch(el.dataset.code){
     //     case 'CapsLock':
             
