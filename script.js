@@ -1,451 +1,451 @@
 const keyboard = [
     {
         id : 0,
-        keyRu : 'ё',
-        keyEn : '~',
+        keyRu : ['ё'],
+        keyEn : ['`', '~'],
         code : 'Backquote',
         classButton : ['button']
     },
     {
         id : 1,
-        keyRu : '1',
-        keyEn : '1',
+        keyRu : ['1', '!'],
+        keyEn : ['1', '!'],
         code : 'Digit1',
         classButton : ['button']
     },
     {
         id : 2,
-        keyRu : '2',
-        keyEn : '2',
+        keyRu : ['2', '"'],
+        keyEn : ['2', '@'],
         code : 'Digit2',
         classButton : ['button']
     },
     {
         id : 3,
-        keyRu : '3',
-        keyEn : '3',
+        keyRu : ['3', '№'],
+        keyEn : ['3', '#'],
         code : 'Digit3',
         classButton : ['button']
     },
     {
         id : 4,
-        keyRu : '4',
-        keyEn : '4',
+        keyRu : ['4', ';'],
+        keyEn : ['4', '$'],
         code : 'Digit4',
         classButton : ['button']
     },
     {
         id : 5,
-        keyRu : '5',
-        keyEn : '5',
+        keyRu : ['5', '%'],
+        keyEn : ['5', '%'],
         code : 'Digit5',
         classButton : ['button']
     },
     {
         id : 6,
-        keyRu : '6',
-        keyEn : '6',
+        keyRu : ['6', ':'],
+        keyEn : ['6', '^'],
         code : 'Digit6',
         classButton : ['button']
     },
     {
         id : 7,
-        keyRu : '7',
-        keyEn : '7',
+        keyRu : ['7', '?'],
+        keyEn : ['7', '&'],
         code : 'Digit7',
         classButton : ['button']
     },
     {
         id : 8,
-        keyRu : '8',
-        keyEn : '8',
+        keyRu : ['8', '*'],
+        keyEn : ['8', '*'],
         code : 'Digit8',
         classButton : ['button']
     },
     {
         id : 9,
-        keyRu : '9',
-        keyEn : '9',
+        keyRu : ['9', '('],
+        keyEn : ['9', '('],
         code : 'Digit9',
         classButton : ['button']
     },
     {
         id : 10,
-        keyRu : '0',
-        keyEn : '0',
+        keyRu : ['0', ')'],
+        keyEn : ['0', ')'],
         code : 'Digit0',
         classButton : ['button']
     },
     {
         id : 11,
-        keyRu : '-',
-        keyEn : '-',
-        keyShift : '_',
+        keyRu : ['-', '_'],
+        keyEn : ['-', '_'],
+        //keyShift : '_',
         code : 'Minus',
         classButton : ['button']
     },
     {
         id : 12,
-        keyRu : '=',
-        keyEn : '=',
-        keyShift : '+',
+        keyRu : ['=', '+'],
+        keyEn : ['=', '+'],
+        //keyShift : '+',
         code : 'Equal',
         classButton : ['button']
     },
     {
         id : 13,
-        keyRu : 'Backspace',
-        keyEn : 'Backspace',
+        keyRu : ['Backspace'],
+        keyEn : ['Backspace'],
         code : 'Backspace',
         classButton : ['button','button_backspace']
     },
     {
         id : 14,
-        keyRu : 'Tab',
-        keyEn : 'Tab',
+        keyRu : ['Tab'],
+        keyEn : ['Tab'],
         code : 'Tab',
         classButton : ['button','button_tab']
     },
     {
         id : 15,
-        keyRu : 'й',
-        keyEn : 'q',
+        keyRu : ['й'],
+        keyEn : ['q'],
         code : 'KeyQ',
         classButton : ['button']
     },
     {
         id : 16,
-        keyRu : 'ц',
-        keyEn : 'w',
+        keyRu : ['ц'],
+        keyEn : ['w'],
         code : 'KeyW',
         classButton : ['button']
     },
     {
         id : 17,
-        keyRu : 'у',
-        keyEn : 'e',
+        keyRu : ['у'],
+        keyEn : ['e'],
         code : 'KeyE',
         classButton : ['button']
     },
     {
         id : 18,
-        keyRu : 'к',
-        keyEn : 'r',
+        keyRu : ['к'],
+        keyEn : ['r'],
         code : 'KeyR',
         classButton : ['button']
     },
     {
         id : 19,
-        keyRu : 'е',
-        keyEn : 't',
+        keyRu : ['е'],
+        keyEn : ['t'],
         code : 'KeyT',
         classButton : ['button']
     },
     {
         id : 20,
-        keyRu : 'н',
-        keyEn : 'y',
+        keyRu : ['н'],
+        keyEn : ['y'],
         code : 'KeyY',
         classButton : ['button']
     },
     {
         id : 21,
-        keyRu : 'г',
-        keyEn : 'u',
+        keyRu : ['г'],
+        keyEn : ['u'],
         code : 'KeyU',
         classButton : ['button']
     },
     {
         id : 22,
-        keyRu : 'ш',
-        keyEn : 'i',
+        keyRu : ['ш'],
+        keyEn : ['i'],
         code : 'KeyI',
         classButton :['button']
     },
     {
         id : 23,
-        keyRu : 'щ',
-        keyEn : 'o',
+        keyRu : ['щ'],
+        keyEn : ['o'],
         code : 'KeyO',
         classButton : ['button']
     },
     {
         id : 24,
-        keyRu : 'з',
-        keyEn : 'p',
+        keyRu : ['з'],
+        keyEn : ['p'],
         code : 'KeyP',
         classButton : ['button']
     },
     {
         id : 25,
-        keyRu : 'х',
-        keyEn : '[',
+        keyRu : ['х'],
+        keyEn : ['[', '{'],
         code : 'BracketLeft',
         classButton : ['button']
     },
     {
         id : 26,
-        keyRu : 'ъ',
-        keyEn : ']',
+        keyRu : ['ъ'],
+        keyEn : [']', '}'],
         code : 'BracketRight',
         classButton : ['button']
     },
     {
         id : 27,
-        keyRu : '\\',
-        keyEn : '\\',
+        keyRu : ['\\','/'],
+        keyEn : ['\\','|'],
         code : 'Backslash',
         classButton : ['button']
     },
     {
         id : 28,
-        keyRu : 'CapsLock',
-        keyEn : 'CapsLock',
+        keyRu : ['CapsLock'],
+        keyEn : ['CapsLock'],
         code : 'CapsLock',
         classButton : ['button','button_caps_lock']
     },
     {
         id : 29,
-        keyRu : 'ф',
-        keyEn : 'a',
+        keyRu : ['ф'],
+        keyEn : ['a'],
         code : 'KeyA',
         classButton : ['button']
     },
     {
         id : 31,
-        keyRu : 'ы',
-        keyEn : 's',
+        keyRu : ['ы'],
+        keyEn : ['s'],
         code : 'KeyS',
         classButton : ['button']
     },
     {
         id : 32,
-        keyRu : 'в',
-        keyEn : 'd',
+        keyRu : ['в'],
+        keyEn : ['d'],
         code : 'KeyD',
         classButton : ['button']
     },
     {
         id : 33,
-        keyRu : 'а',
-        keyEn : 'f',
+        keyRu : ['а'],
+        keyEn : ['f'],
         code : 'KeyF',
         classButton : ['button']
     },
     {
         id : 34,
-        keyRu : 'п',
-        keyEn : 'g',
+        keyRu : ['п'],
+        keyEn : ['g'],
         code : 'KeyG',
         classButton : ['button']
     },
     {
         id : 35,
-        keyRu : 'р',
-        keyEn : 'h',
+        keyRu : ['р'],
+        keyEn : ['h'],
         code : 'KeyH',
         classButton : ['button']
     },
     {
         id : 36,
-        keyRu : 'о',
-        keyEn : 'j',
+        keyRu : ['о'],
+        keyEn : ['j'],
         code : 'KeyJ',
         classButton : ['button']
     },
     {
         id : 37,
-        keyRu : 'л',
-        keyEn : 'k',
+        keyRu : ['л'],
+        keyEn : ['k'],
         code : 'KeyK',
         classButton : ['button']
     },
     {
         id : 38,
-        keyRu : 'д',
-        keyEn : 'l',
+        keyRu : ['д'],
+        keyEn : ['l'],
         code : 'KeyL',
         classButton : ['button']
     },
     {
         id : 39,
-        keyRu : 'ж',
-        keyEn : ';',
+        keyRu : ['ж'],
+        keyEn : [';',':'],
         code : 'Semicolon',
         classButton : ['button']
     },
     {
         id : 40,
-        keyRu : 'э',
-        keyEn : '\'',
+        keyRu : ['э'],
+        keyEn : ['\'','"'],
         code : 'Quote',
         classButton : ['button']
     },
     {
         id : 41,
-        keyRu : 'Enter',
-        keyEn : 'Enter',
+        keyRu : ['Enter'],
+        keyEn : ['Enter'],
         code : 'Enter',
         classButton : ['button','button_enter']
     },
     {
         id : 42,
-        keyRu : 'Shift',
-        keyEn : 'Shift',
+        keyRu : ['Shift'],
+        keyEn : ['Shift'],
         code : 'ShiftLeft',
         classButton : ['button','button_shift']
     },
     {
         id : 43,
-        keyRu : '\\',
-        keyEn : '\\',
+        keyRu : ['\\'],
+        keyEn : ['\\'],
         code : 'Backslash',
         classButton : ['button']
     },
     {
         id : 44,
-        keyRu : 'я',
-        keyEn : 'z',
+        keyRu : ['я'],
+        keyEn : ['z'],
         code : 'KeyZ',
         classButton : ['button']
     },
     {
         id : 45,
-        keyRu : 'ч',
-        keyEn : 'x',
+        keyRu : ['ч'],
+        keyEn : ['x'],
         code : 'KeyX',
         classButton : ['button']
     },
     {
         id : 46,
-        keyRu : 'с',
-        keyEn : 'c',
+        keyRu : ['с'],
+        keyEn : ['c'],
         code : 'KeyC',
         classButton : ['button']
     },
     {
         id : 47,
-        keyRu : 'м',
-        keyEn : 'v',
+        keyRu : ['м'],
+        keyEn : ['v'],
         code : 'KeyV',
         classButton : ['button']
     },
     {
         id : 48,
-        keyRu : 'и',
-        keyEn : 'b',
+        keyRu : ['и'],
+        keyEn : ['b'],
         code : 'KeyB',
         classButton : ['button']
     },
     {
         id : 49,
-        keyRu : 'т',
-        keyEn : 'n',
+        keyRu : ['т'],
+        keyEn : ['n'],
         code : 'KeyN',
         classButton : ['button']
     },
     {
         id : 50,
-        keyRu : 'ь',
-        keyEn : 'm',
+        keyRu : ['ь'],
+        keyEn : ['m'],
         code : 'KeyM',
         classButton : ['button']
     },
     {
         id : 51,
-        keyRu : 'б',
-        keyEn : ',',
+        keyRu : ['б'],
+        keyEn : [',','<'],
         code : 'Comma',
         classButton : ['button']
     },
     {
         id : 52,
-        keyRu : 'ю',
-        keyEn : '.',
+        keyRu : ['ю'],
+        keyEn : ['.','>'],
         code : 'Period',
         classButton : ['button']
     },
     {
         id : 53,
-        keyRu : '.',
-        keyEn : '/',
+        keyRu : ['.',','],
+        keyEn : ['/','?'],
         code : 'Slash',
         classButton : ['button']
     },
     {
         id : 54,
-        keyRu : '↑',
-        keyEn : '↑',
+        keyRu : ['↑'],
+        keyEn : ['↑'],
         code : 'ArrowUp',
         classButton : ['button']
     },
     {
         id : 55,
-        keyRu : 'Shift',
-        keyEn : 'Shift',
+        keyRu : ['Shift'],
+        keyEn : ['Shift'],
         code : 'ShiftRight',
         classButton : ['button']
     },
     {
         id : 56,
-        keyRu : 'Ctrl',
-        keyEn : 'Ctrl',
+        keyRu : ['Ctrl'],
+        keyEn : ['Ctrl'],
         code : 'ControlLeft',
         classButton : ['button','button_ctrl']
     },
     {
         id : 57,
-        keyRu : 'Win',
-        keyEn : 'Win',
+        keyRu : ['Win'],
+        keyEn : ['Win'],
         code : 'Meta',
         classButton : ['button']
     },
     {
         id : 58,
-        keyRu : 'Alt',
-        keyEn : 'Alt',
+        keyRu : ['Alt'],
+        keyEn : ['Alt'],
         code : 'AltLeft',
         classButton : ['button']
     },
     {
         id : 59,
-        keyRu : ' ',
-        keyEn : ' ',
+        keyRu : [' '],
+        keyEn : [' '],
         code : 'Space',
         classButton : ['button','button_space']
     },
     {
         id : 60,
-        keyRu : 'Alt',
-        keyEn : 'Alt',
+        keyRu : ['Alt'],
+        keyEn : ['Alt'],
         code : 'AltRight',
         classButton : ['button']
     },
     {
         id : 61,
-        keyRu : 'Ctrl',
-        keyEn : 'Ctrl',
+        keyRu : ['Ctrl'],
+        keyEn : ['Ctrl'],
         code : 'ControlRight',
         classButton : ['button']
     },
     {
         id : 62,
-        keyRu : '←',
-        keyEn : '←',
+        keyRu : ['←'],
+        keyEn : ['←'],
         code : 'ArrowLeft',
         classButton : ['button']
     },
     {
         id : 63,
-        keyRu : '↓',
-        keyEn : '↓',
+        keyRu : ['↓'],
+        keyEn : ['↓'],
         code : 'ArrowDown',
         classButton : ['button']
     },
     {
         id : 64,
-        keyRu : '→',
-        keyEn : '→',
+        keyRu : ['→'],
+        keyEn : ['→'],
         code : 'ArrowRight',
         classButton : ['button']
     }
@@ -455,16 +455,21 @@ const keyboard = [
 
 let CL = false;
 let SH = false;
+let AL = false;
 let pressed = new Set();
 let language = localStorage.getItem('lang')
 window.onload = () => {
+    
     if(language){
         if(language === 'En'){
+            loadBody();
             loadBodyEn();
         } else if (language === 'Ru') {
+            loadBody();
             loadBodyRu();
         }
     } else {
+        loadBody();
         loadBodyEn();
         language = 'En'
     }
@@ -472,32 +477,63 @@ window.onload = () => {
     keyBoard();
 }
 
-
-const loadBodyRu= () =>{
+const loadBody = () =>{
     document.body.innerHTML = `<section class="overlay"></section>`;
     document.querySelector('.overlay').innerHTML = `<textarea name="" class="input" cols="30" rows="10"></textarea>
     <div class="keyboard"></div>`;
+}
+const loadBodyRu= () =>{
+    document.querySelector('.keyboard').innerHTML = '';
     keyboard.forEach(el => {
         let classButton = '';
         el.classButton.forEach(el => {
             classButton += ` ${el}`;
         } )
-        document.querySelector('.keyboard').innerHTML += `<div class='${classButton}' data-code=${el.code} >${el.keyRu}</div>`
+        let letter = '';
+        if (el.keyRu.length > 1){
+            letter +=`${el.keyRu[0]}`;
+            letter +=` <span class = 'second'>${el.keyRu[1]}</span>`
+        } else {
+            letter +=`${el.keyRu[0]}`
+        }
+        if (el.code === 'CapsLock'){
+            if(!CL){
+                document.querySelector('.keyboard').innerHTML += `<div class='${classButton}' data-code=${el.code} >${letter}</div>`
+            } else {
+                document.querySelector('.keyboard').innerHTML += `<div id='button_active' class='${classButton}' data-code=${el.code} >${letter}</div>`
+            }
+        } else {
+            document.querySelector('.keyboard').innerHTML += `<div class='${classButton}' data-code=${el.code} >${letter}</div>`
+        }
+       
     })
 
 }
 
-
 const loadBodyEn= () =>{
-    document.body.innerHTML = `<section class="overlay"></section>`;
-    document.querySelector('.overlay').innerHTML = `<textarea name="" class="input" cols="30" rows="10"></textarea>
-    <div class="keyboard"></div>`;
+    document.querySelector('.keyboard').innerHTML = '';
     keyboard.forEach(el => {
         let classButton = '';
         el.classButton.forEach(el => {
             classButton += ` ${el}`;
         } )
-        document.querySelector('.keyboard').innerHTML += `<div class='${classButton}' data-code=${el.code} >${el.keyEn}</div>`
+        let letter = '';
+        if (el.keyEn.length > 1){
+            letter +=`${el.keyEn[0]}`;
+            letter +=` <span class = 'second'>${el.keyEn[1]}</span>`
+        } else {
+            
+            letter +=`${el.keyEn[0]}`
+        }
+        if (el.code === 'CapsLock'){
+            if(!CL){
+                document.querySelector('.keyboard').innerHTML += `<div class='${classButton}'  data-code=${el.code} >${letter}</div>`
+            } else {
+                document.querySelector('.keyboard').innerHTML += `<div id='button_active' class='${classButton}' data-code=${el.code} >${letter}</div>`
+            }
+        } else {
+            document.querySelector('.keyboard').innerHTML += `<div class='${classButton}' data-code=${el.code} >${letter}</div>`
+        }
     })
 
 }
@@ -506,84 +542,47 @@ const loadBodyEn= () =>{
 
  
 const click = () => {
-    //const elemMouse = ;
-   // document.querySelectorAll('.button').forEach(el => {
-            //down
-        document.querySelector('.keyboard').addEventListener('mousedown', (event) =>{
-            if (event.target.classList.contains('button')) {
-                switch (event.target.dataset.code) {
-                    case 'CapsLock':
-                        if(CL){
-                            CL =false;
-                        } else {
-                            CL = true;
-                        }
-                        break;
-                    case 'ShiftLeft':
-                        SH = true;
-                        break;
-                    case 'ShiftRight':
-                        SH = true;
-                        break;
-                    default:
-                        pressed.add(event.target.dataset.code);
-                        buttonDown(event.target.dataset);
-                }
-                // console.log(pressed);
-                //pressed.add(event.target.dataset.code);
-               // buttonDown(pressed);
-            }
-        })
-        //up
-        document.querySelector('.keyboard').addEventListener('mouseup', (event) => {
-            if (event.target.classList.contains('button')) {
-                // console.log('CL', CL);
-                // console.log('SH', SH);
-                document.querySelectorAll('.button').forEach(el => {
-                    if (event.target.dataset.code === 'ShiftLeft' || event.target.dataset.code === 'ShiftRight'){
-                        SH = false;
-                    }
-                    if(el.dataset.code === event.target.dataset.code){
-                        // if(CL){
-                        //if (event.target.dataset.code === 'CapsLock'){
-                        //         CL = false;
-                        //     }
-                        // }
-                        pressed.delete(event.target.dataset.code);
-                        //SH = false;
-                        // if (CL){
-                        //     if (event.target.dataset.code === 'CapsLock'){
-                        //         pressed.delete(event.target.dataset.code);
-                        //         setTimeout(() => {
-                        //             el.id = '';
-                        //         },300);
-                        //         CL = false;
-                        //     } else {
-                        //         pressed.delete(event.target.dataset.code);
-                        //         setTimeout(() => {
-                        //             el.id = '';
-                        //         },300);
-                        //     }
-                        // } else {
-                        //     if (event.target.dataset.code === 'CapsLock'){
-                        //         CL = true;
-                        //     } else {
-                        //         pressed.delete(event.target.dataset.code);
-                        //         setTimeout(() => {
-                        //             el.id = '';
-                        //         },300);
-                        //     }
-                        // }
-                    }
-                })
-                // console.log('CL', CL);
-                // console.log('SH', SH);
-                // console.log(pressed);
-            }
-        })
+    document.querySelector('.keyboard').addEventListener('mousedown', (event) =>{
         
-   // })
-    
+        if (event.target.classList.contains('button')) {
+            console.log(event.target.dataset.code)
+            switchDown(event.target.dataset);
+        }
+    })
+    //up
+    document.querySelector('.keyboard').addEventListener('mouseup', (event) => {
+        if (event.target.classList.contains('button')) {
+            document.querySelectorAll('.button').forEach(el => {
+                
+                if (event.target.dataset.code === 'ShiftLeft' || event.target.dataset.code === 'ShiftRight'){
+                    if(CL){
+                        SH = false;
+                        letterUpper();
+                    } else {
+                        SH = false;
+                        letterLower();
+                    }
+                }
+                if (event.target.dataset.code === 'AltLeft' || event.target.dataset.code === 'AltRight'){
+                    AL = false;
+                }
+                if(el.dataset.code === event.target.dataset.code){
+                    if (event.target.dataset.code === 'CapsLock'){
+                        if (!CL){
+                            setTimeout(() => {
+                                el.id = '';
+                            },300);
+                        }
+                    } else {
+                        setTimeout(() => {
+                            el.id = '';
+                        },300);
+                    }
+                    pressed.delete(event.target.dataset.code);
+                }
+            })
+        }
+    })
 }
 
   
@@ -591,103 +590,172 @@ const click = () => {
 const keyBoard = () => {
     //down
     document.addEventListener('keydown', (event) =>{
-        switch (event.code) {
-            case 'CapsLock':
-                if(CL){
-                    CL =false;
-                } else {
-                    CL = true;
-                }
-                break;
-            case 'ShiftLeft':
-                SH = true;
-                break;
-            case 'ShiftRight':
-                SH = true;
-                break;
-            default:
-                
-                pressed.add(event.code);
-                buttonDown(event);
-        }
-        // console.log(pressed);
+        switchDown(event);
         event.preventDefault();
-       
     })
-
     //up
     document.addEventListener('keyup', (event) => {
-        // console.log('CL', CL);
-        // console.log('SH', SH);
         document.querySelectorAll('.button').forEach(el => {
+            
             if (event.code === 'ShiftLeft' || event.code === 'ShiftRight'){
-                SH = false;
-            }
-            if(el.dataset.code === event.code){
-            //     if (CL){
-            //         if (event.code === 'CapsLock'){
-                        pressed.delete(event.code);
-                        //SH = false;
-            //             setTimeout(() => {
-            //                 el.id = '';
-            //             },300);
-            //             CL = false;
-            //         } else {
-            //             pressed.delete(event.code);
-            //             setTimeout(() => {
-            //                 el.id = '';
-            //             },300);
-            //         }
-            //     } else {
-            //         if (event.code === 'CapsLock'){
-            //             CL = true;
-            //         } else {
-            //             pressed.delete(event.code);
-            //             setTimeout(() => {
-            //                 el.id = '';
-            //             },300);
-            //         }
-            //     }
-            }
-        })
-        // console.log('CL', CL);
-        // console.log('SH', SH);
-        // console.log(pressed);
-    });
-}
-
-
-const buttonDown = (event) => {
-    // pressed.forEach(code => {
-    //     if(code === 'ShiftLeft' || code === 'ShiftRight'){
-    //         el.id = 'button_active';
-    //         document.querySelector('.input').value += el.innerText;
-    //     }
-    // })
-    document.querySelectorAll('.button').forEach(el => {
-        
-            if(el.dataset.code === event.code){
-                if (CL || SH){
-                   return document.querySelector('.input').value += el.innerText.toUpperCase();
+                if(CL){
+                    SH = false;
+                    letterUpper();
                 } else {
-                    return document.querySelector('.input').value += el.innerText;
+                    SH = false;
+                    letterLower();
                 }
             }
-      
-
-
+            if (event.code === 'AltLeft' || event.code === 'AltRight'){
+                AL = false;
+            }
+            if(el.dataset.code === event.code){
+                    if (event.code === 'CapsLock'){
+                        if (!CL){
+                            setTimeout(() => {
+                                el.id = '';
+                            },300)
+                        }
+                    } else {
+                        setTimeout(() => {
+                            el.id = '';
+                        },300)
+                    }
+                    pressed.delete(event.code);   
+            }
+        })
     })
-}       
+}
+const switchDown = (event) => {
+    switch (event.code) {
+        case 'CapsLock':
+            if(CL){
+                CL =false;
+                letterLower();
+            } else {
+                CL = true;
+                letterUpper();
+            }
+            break;
+        case 'ShiftLeft':
+            if(CL){
+                SH = true;
+                letterLower();
+                break;
+            } else {
+                SH = true;
+                letterUpper();
+                break;
+            }
+        case 'ShiftRight':
+            if(CL){
+                SH = true;
+                letterLower();
+                break;
+            } else {
+                SH = true;
+                letterUpper();
+                break;
+            }
+        case 'AltRight':
+            AL = true;
+            break;
+        case 'AltLeft':
+            AL = true;
+            break
+        default:
+            buttonDown(event);
+    }
+    if (AL && SH){ 
+        if(language === 'En'){
+            language = 'Ru'
+            loadBodyRu();
+            localStorage.setItem('lang', language)
+        } else if (language === 'Ru') {
+            language = 'En'
+            loadBodyEn();
+            localStorage.setItem('lang', language)
+        } 
+    }
 
+    pressed.add(event.code);
+    buttonAnimation(pressed);
+}
 
-//if (el.dataset.code.slice(0,-1) === 'Key'){
-    //     if(CL || SH){
-    //         //console.log(CL)
-    //         document.querySelector('.input').value += el.innerText.toUpperCase();
-    //        // el.id = 'button_active';
-            
-    //     } else {
-    //         document.querySelector('.input').value += el.innerText;
-    //        // el.id = 'button_active';
-    //     }   
-    // }
+const buttonDown = (event) => {
+    
+    document.querySelectorAll('.button').forEach(el => {
+            if(el.dataset.code === event.code){
+                if (CL && SH){
+                    letterLower();
+                   return document.querySelector('.input').value += el.innerHTML.charAt(0);
+                }  else if (CL || SH){
+                    
+                    return document.querySelector('.input').value +=el.innerHTML.charAt(0);
+
+                } else {
+                    return document.querySelector('.input').value += el.innerHTML.charAt(0);
+                }
+            }
+    })
+}      
+
+const buttonAnimation = (pressed) => {
+    pressed.forEach(code => {
+        document.querySelectorAll('.button').forEach(el => {
+            if(el.dataset.code === code){
+                el.id = 'button_active';
+            }
+        })
+    })
+}
+const letterLower = () => {
+   if(language === 'En'){
+        document.querySelectorAll('.button').forEach(el => {
+            if (el.dataset.code.slice(0, -1) === 'Key'){
+                let i = el.innerHTML.toLocaleLowerCase();
+                el.innerHTML = i;
+            }
+        })
+    } else if (language === 'Ru'){
+        document.querySelectorAll('.button').forEach(el => {
+            if (el.dataset.code.slice(0, -1) === 'Key' ||
+            el.dataset.code === 'Period' ||
+            el.dataset.code === 'Backquote' ||
+            el.dataset.code === 'BracketLeft' ||
+            el.dataset.code === 'BracketRight' ||
+            el.dataset.code === 'Semicolon' ||
+            el.dataset.code === 'Quote' ||
+            el.dataset.code === 'Comma' ){
+                let i = el.innerHTML.toLocaleLowerCase();
+                el.innerHTML = i;
+            }
+        })
+    }
+}
+const letterUpper = () => {
+    if(language === 'En'){
+     document.querySelectorAll('.button').forEach(el => {
+
+            if (el.dataset.code.slice(0, -1) === 'Key'){
+                let i = el.innerHTML.toLocaleUpperCase();
+                el.innerHTML = i;
+            }
+        })
+    } else if (language === 'Ru'){
+        document.querySelectorAll('.button').forEach(el => {
+            if (el.dataset.code.slice(0, -1) === 'Key' ||
+            el.dataset.code === 'Period' ||
+            el.dataset.code === 'Backquote' ||
+            el.dataset.code === 'BracketLeft' ||
+            el.dataset.code === 'BracketRight' ||
+            el.dataset.code === 'Semicolon' ||
+            el.dataset.code === 'Quote' ||
+            el.dataset.code === 'Comma' ){
+                let i = el.innerHTML.toLocaleUpperCase();
+                el.innerHTML = i;
+            }
+        })
+    }
+    
+}
