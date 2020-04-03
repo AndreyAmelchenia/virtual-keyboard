@@ -482,7 +482,7 @@ const loadBody = () =>{
     document.querySelector('.overlay').innerHTML = `<textarea name="" class="input" cols="30" rows="10"></textarea>
     <div class="keyboard"></div>`;
 }
-const loadBodyRu= () =>{
+const loadBodyRu = () =>{
     document.querySelector('.keyboard').innerHTML = '';
     keyboard.forEach(el => {
         let classButton = '';
@@ -538,9 +538,6 @@ const loadBodyEn= () =>{
 
 }
 
-
-
- 
 const click = () => {
     document.querySelector('.keyboard').addEventListener('mousedown', (event) =>{
         
@@ -585,8 +582,6 @@ const click = () => {
     })
 }
 
-  
-    
 const keyBoard = () => {
     //down
     document.addEventListener('keydown', (event) =>{
@@ -626,6 +621,7 @@ const keyBoard = () => {
         })
     })
 }
+
 const switchDown = (event) => {
     switch (event.code) {
         case 'CapsLock':
@@ -677,13 +673,11 @@ const switchDown = (event) => {
             localStorage.setItem('lang', language)
         } 
     }
-
     pressed.add(event.code);
     buttonAnimation(pressed);
 }
 
 const buttonDown = (event) => {
-    
     document.querySelectorAll('.button').forEach(el => {
             if(el.dataset.code === event.code){
                 if (CL && SH){
@@ -709,6 +703,7 @@ const buttonAnimation = (pressed) => {
         })
     })
 }
+
 const letterLower = () => {
    if(language === 'En'){
         document.querySelectorAll('.button').forEach(el => {
@@ -733,9 +728,10 @@ const letterLower = () => {
         })
     }
 }
+
 const letterUpper = () => {
     if(language === 'En'){
-     document.querySelectorAll('.button').forEach(el => {
+        document.querySelectorAll('.button').forEach(el => {
 
             if (el.dataset.code.slice(0, -1) === 'Key'){
                 let i = el.innerHTML.toLocaleUpperCase();
@@ -757,5 +753,27 @@ const letterUpper = () => {
             }
         })
     }
-    
+}
+
+const letterShift = () =>{
+    document.querySelectorAll('.button').forEach(el => {
+
+        if (el.dataset.code.slice(0, -1) === 'Digit'||
+            el.dataset.code === 'Period' ||
+            el.dataset.code === 'Backquote' ||
+            el.dataset.code === 'BracketLeft' ||
+            el.dataset.code === 'BracketRight' ||
+            el.dataset.code === 'Semicolon' ||
+            el.dataset.code === 'Quote' ||
+            el.dataset.code === 'Comma' ){
+                let i = el.innerHTML.charAt(0);
+                let j = el.querySelector('.second').innerHTML.charAt(0);
+                el.innerHTML = j + el.innerHTML.slice(1);
+                el.querySelector('.second').innerHTML = i;
+                console.log('j=',j);
+                console.log('i=',i);
+                console.log(j + el.innerHTML.slice(1));
+
+        }
+    })
 }
