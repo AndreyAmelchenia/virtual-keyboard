@@ -14,8 +14,8 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
-        //"no-console": "warn"
-        //"semi": ["warn", "always"],
+        "no-console": "warn",
+        "semi": ["warn", "always"],
         //"quotes": ["error", "double"]
     }
 };

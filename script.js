@@ -198,6 +198,13 @@ const keyboard = [
         classButton : ['button']
     },
     {
+        id : 43,
+        keyRu : ['Del'],
+        keyEn : ['Del'],
+        code : 'Delete',
+        classButton : ['button', 'button_delete']
+    },
+    {
         id : 28,
         keyRu : ['CapsLock'],
         keyEn : ['CapsLock'],
@@ -296,13 +303,6 @@ const keyboard = [
         classButton : ['button','button_shift']
     },
     {
-        id : 43,
-        keyRu : ['\\'],
-        keyEn : ['\\'],
-        code : 'Backslash1',
-        classButton : ['button']
-    },
-    {
         id : 44,
         keyRu : ['я'],
         keyEn : ['z'],
@@ -384,7 +384,7 @@ const keyboard = [
         keyRu : ['Shift'],
         keyEn : ['Shift'],
         code : 'ShiftRight',
-        classButton : ['button']
+        classButton : ['button','button_shift']
     },
     {
         id : 56,
@@ -405,7 +405,7 @@ const keyboard = [
         keyRu : ['Alt'],
         keyEn : ['Alt'],
         code : 'AltLeft',
-        classButton : ['button']
+        classButton : ['button', 'button_alt']
     },
     {
         id : 59,
@@ -419,48 +419,49 @@ const keyboard = [
         keyRu : ['Alt'],
         keyEn : ['Alt'],
         code : 'AltRight',
-        classButton : ['button']
+        classButton : ['button', 'button_alt']
     },
     {
         id : 61,
-        keyRu : ['Ctrl'],
-        keyEn : ['Ctrl'],
-        code : 'ControlRight',
-        classButton : ['button']
-    },
-    {
-        id : 62,
         keyRu : ['←'],
         keyEn : ['←'],
         code : 'ArrowLeft',
         classButton : ['button']
     },
     {
-        id : 63,
+        id : 62,
         keyRu : ['↓'],
         keyEn : ['↓'],
         code : 'ArrowDown',
         classButton : ['button']
     },
     {
-        id : 64,
+        id : 63,
         keyRu : ['→'],
         keyEn : ['→'],
         code : 'ArrowRight',
-        classButton : ['button']
-    }
+        classButton : ['button' ]
+    },
+    {
+        id : 64,
+        keyRu : ['Ctrl'],
+        keyEn : ['Ctrl'],
+        code : 'ControlRight',
+        classButton : ['button','button_ctrl']
+    },
 
-]
+];
 
 
 let CL = false;
 let SH = false;
 let AL = false;
 let position; 
+let positionEnd; 
 let pressed = new Set();
-let language = localStorage.getItem('lang')
+let language = localStorage.getItem('lang');
 window.onload = () => {
-    
+
     if(language){
         if(language === 'En'){
             loadBody();
@@ -472,45 +473,43 @@ window.onload = () => {
     } else {
         loadBody();
         loadBodyEn();
-        language = 'En'
+        language = 'En';
     }
-    pos();
     click();
     keyBoard();
-}
+    pos();
+};
 
 const loadBody = () =>{
     document.body.innerHTML = `<section class="overlay"></section>`;
-    document.querySelector('.overlay').innerHTML = `<textarea name="" class="input" cols="30" rows="10"></textarea>
-    <div class="keyboard"></div>`;
-}
+    document.querySelector('.overlay').innerHTML = `<h1>Virtual Keyboard</h1><textarea name="" class="input" cols="30" rows="10"></textarea>
+    <div class="keyboard"></div><p>Клавиатура создана в операционной системе Windows.<br>Для переключения языка: Alt + Shift.</p>`;
+};
 const loadBodyRu = () =>{
     document.querySelector('.keyboard').innerHTML = '';
     keyboard.forEach(el => {
         let classButton = '';
         el.classButton.forEach(el => {
             classButton += ` ${el}`;
-        } )
+        });
         let letter = '';
         if (el.keyRu.length > 1){
             letter +=`${el.keyRu[0]}`;
-            letter +=` <span class = 'second'>${el.keyRu[1]}</span>`
+            letter +=` <span class = 'second'>${el.keyRu[1]}</span>`;
         } else {
-            letter +=`${el.keyRu[0]}`
+            letter +=`${el.keyRu[0]}`;
         }
         if (el.code === 'CapsLock'){
             if(!CL){
-                document.querySelector('.keyboard').innerHTML += `<div class='${classButton}' data-code=${el.code} >${letter}</div>`
+                document.querySelector('.keyboard').innerHTML += `<div class='${classButton}' data-code=${el.code} >${letter}</div>`;
             } else {
-                document.querySelector('.keyboard').innerHTML += `<div id='button_active' class='${classButton}' data-code=${el.code} >${letter}</div>`
+                document.querySelector('.keyboard').innerHTML += `<div id='button_active' class='${classButton}' data-code=${el.code} >${letter}</div>`;
             }
         } else {
-            document.querySelector('.keyboard').innerHTML += `<div class='${classButton}' data-code=${el.code} >${letter}</div>`
+            document.querySelector('.keyboard').innerHTML += `<div class='${classButton}' data-code=${el.code} >${letter}</div>`;
         }
-       
-    })
-
-}
+    });
+};
 
 const loadBodyEn= () =>{
     document.querySelector('.keyboard').innerHTML = '';
@@ -518,45 +517,38 @@ const loadBodyEn= () =>{
         let classButton = '';
         el.classButton.forEach(el => {
             classButton += ` ${el}`;
-        } )
+        });
         let letter = '';
         if (el.keyEn.length > 1){
             letter +=`${el.keyEn[0]}`;
-            letter +=` <span class = 'second'>${el.keyEn[1]}</span>`
+            letter +=` <span class = 'second'>${el.keyEn[1]}</span>`;
         } else {
-            
-            letter +=`${el.keyEn[0]}`
+            letter +=`${el.keyEn[0]}`;
         }
         if (el.code === 'CapsLock'){
             if(!CL){
-                document.querySelector('.keyboard').innerHTML += `<div class='${classButton}'  data-code=${el.code} >${letter}</div>`
+                document.querySelector('.keyboard').innerHTML += `<div class='${classButton}'  data-code=${el.code} >${letter}</div>`;
             } else {
-                document.querySelector('.keyboard').innerHTML += `<div id='button_active' class='${classButton}' data-code=${el.code} >${letter}</div>`
+                document.querySelector('.keyboard').innerHTML += `<div id='button_active' class='${classButton}' data-code=${el.code} >${letter}</div>`;
             }
         } else {
-            document.querySelector('.keyboard').innerHTML += `<div class='${classButton}' data-code=${el.code} >${letter}</div>`
+            document.querySelector('.keyboard').innerHTML += `<div class='${classButton}' data-code=${el.code} >${letter}</div>`;
         }
-    })
-
-}
+    });
+};
 const pos = () =>{
     document.querySelector('.input').addEventListener('click', ()=>{
         position = document.querySelector('.input').selectionStart;
-        console.log(position);
-    })
-    
-}
-
-   
+        positionEnd = document.querySelector('.input').selectionEnd;
+    });
+};
 
 const click = () => {
     document.querySelector('.keyboard').addEventListener('mousedown', (event) =>{
-        console.log('start1', document.querySelector('.input').selectionStart);
         if (event.target.classList.contains('button')) {
             switchDown(event.target.dataset);
-            console.log('start2', document.querySelector('.input').selectionStart);
         }
-    })
+    });
     //up
     document.querySelector('.keyboard').addEventListener('mouseup', (event) => {
         if (event.target.classList.contains('button')) {
@@ -567,7 +559,7 @@ const click = () => {
                     letterUpper();
                 } else {
                     SH = false;
-                    letterShift();
+                   letterShift();
                     letterLower();
                 }
             }
@@ -586,14 +578,13 @@ const click = () => {
                         setTimeout(() => {
                             el.id = '';
                         },300);
-                    }
-                    
+                    }   
                 }
-            })
+            });
             pressed.delete(event.target.dataset.code);
         }
-    })
-}
+    });
+};
 
 const keyBoard = () => {
     //down
@@ -602,18 +593,18 @@ const keyBoard = () => {
             switchDown(event);
         }
         event.preventDefault();
-    })
+    });
     //up
     document.addEventListener('keyup', (event) => {
 
         if (event.code === 'ShiftLeft' || event.code === 'ShiftRight'){
             if(CL){
                 SH = false;
-                letterShift();
+               letterShift();
                 letterUpper();
             } else {
                 SH = false;
-                letterShift();
+               letterShift();
                 letterLower();
             }
         }
@@ -626,29 +617,23 @@ const keyBoard = () => {
                         if (!CL){
                             setTimeout(() => {
                                 el.id = '';
-                            },300)
+                            },300);
                         }
                     } else {
                         setTimeout(() => {
                             el.id = '';
-                        },300)
+                        },300);
                     }      
             }
-        })
+        });
         pressed.delete(event.code);
-    })
-}
+    });
+};
 
 const switchDown = (event) => {
-    
-    //let selectionStart = document.querySelector('.input').selectionStart;
-    //let selectionEnd = document.querySelector('.input').selectionEnd;
     let lengthInput = document.querySelector('.input').value.length;
     let start = document.querySelector('.input').value.substring(0, position);
     let end = document.querySelector('.input').value.substring(position);
-    // console.log('poz',position);
-    // console.log('start', selectionStart);
-    // console.log('lenght',lengthInput);
     switch (event.code) {
         case 'CapsLock':
             if(CL){
@@ -664,112 +649,162 @@ const switchDown = (event) => {
                 SH = true;
                 letterShift();
                 letterLower();
-                break;
             } else {
                 SH = true;
                 letterShift();
                 letterUpper();
-                break;
             }
+            break;
         case 'ShiftRight':
             if(CL){
                 SH = true;
                 letterShift();
                 letterLower();
-                break;
             } else {
                 SH = true;
                 letterShift();
                 letterUpper();
-                break;
             }
+            break;
         case 'AltRight':
             AL = true;
             break;
         case 'AltLeft':
             AL = true;
-            break
-        case 'Space':
-           if (position === lengthInput){
+            break;
+        case 'ControlRight':
+            break;
+        case 'Enter':
+            document.querySelector('.input').value += '\r';
+            position = `${start} `.length;
+            positionEnd = position;
+            break;
+        case 'ControlLeft':
+            break;
+        case 'Meta':
+            break;
+        case 'Space':       
+            if (position === lengthInput){
                 document.querySelector('.input').value += ' ';
                 position = `${start} `.length;
-                break;
+                positionEnd = position;
+
             } else {
-            //document.querySelector('.input').value = '';
                 document.querySelector('.input').value = `${start}` + ' ' + `${end}`;
                 position = `${start} `.length;
+                positionEnd = position;
                 document.querySelector('.input').setSelectionRange(position, position);
-                break;
             }
+            break;
+        case 'Backspace':
+            if(position > 0){
+                if (position === lengthInput){
+                    document.querySelector('.input').value = document.querySelector('.input').value.substring(0, lengthInput - 1);
+                    position --;
+                } else {
+                    start = document.querySelector('.input').value.substring(0, position);
+                    end = document.querySelector('.input').value.substring(positionEnd);
+                    if(position === positionEnd) {
+                        position --;
+                        start = document.querySelector('.input').value.substring(0, position);
+                        document.querySelector('.input').value = `${start + end}`;
+                        positionEnd = position;
+                        document.querySelector('.input').setSelectionRange(position, position);
+                    } else {
+                        document.querySelector('.input').value = `${start + end}`;
+                        document.querySelector('.input').setSelectionRange(position, position);
+                        positionEnd = position;
+                    } 
+                }
+            } else {
+                if(position != positionEnd){
+                    start = document.querySelector('.input').value.substring(0, position);
+                    end = document.querySelector('.input').value.substring(positionEnd);
+                    document.querySelector('.input').value = `${start + end}`;
+                    document.querySelector('.input').setSelectionRange(position, position);
+                    positionEnd = position;
+                }
+            }
+            break;
+        case 'Delete':
+            if(position < lengthInput){
+                    start = document.querySelector('.input').value.substring(0, position);
+                    end = document.querySelector('.input').value.substring(positionEnd+1);
+                    if(position === positionEnd) {
+                        document.querySelector('.input').value = `${start + end}`;
+                        // positionEnd = position;
+                        document.querySelector('.input').setSelectionRange(position, position);
+                    } else {
+                        end = document.querySelector('.input').value.substring(positionEnd);
+                        document.querySelector('.input').value = `${start + end}`;
+                        document.querySelector('.input').setSelectionRange(position, position);
+                    } 
+            } 
+            break;
         case 'Tab':
           if (position === lengthInput){
             document.querySelector('.input').value += '    ';
             position = `${start}    `.length;
-            break;
+            positionEnd = position;
            } else {
-            //document.querySelector('.input').value = '';
             document.querySelector('.input').value = `${start}` + '    ' + `${end}`;
             position = `${start}    `.length;
+            positionEnd = position;
+            document.querySelector('.input').setSelectionRange(position, position);
+           }
+           break;
+        case 'ArrowLeft':
+            if(position >= 1){
+                position --;
+                positionEnd = position;
+            }
             document.querySelector('.input').setSelectionRange(position, position);
             break;
-           }
-           
+        case 'ArrowRight':
+            if(position < lengthInput){
+                position ++;
+                positionEnd = position;
+            }
+            document.querySelector('.input').setSelectionRange(position, position);
+            break;
         default:
             document.querySelectorAll('.button').forEach(el => {
                 if(el.dataset.code === event.code){
                     if (CL && SH){
                         letterLower();
                     } 
-                   console.log('pos', position,'lengthInput',lengthInput)
                     if (position === lengthInput){
                         document.querySelector('.input').value += el.innerText.charAt(0);
                         position = `${start + el.innerText.charAt(0)}`.length;
+                        positionEnd = position;
+                        document.querySelector('.input').setSelectionRange(position, position);
                         return;
                     } else {
-                    //document.querySelector('.input').value = '';
                         document.querySelector('.input').value = `${start}${el.innerText.charAt(0)}${end}`;
                         position = `${start + el.innerText.charAt(0)}`.length;
-                        //document.querySelector('.input').setSelectionRange(position, position);
+                        positionEnd = position;
+                        document.querySelector('.input').setSelectionRange(position, position);
                         return;
                     }
-                    
                 }
-            })
+            });
     }
-    if (AL && SH){ 
+    if (AL && SH){
         if(language === 'En'){
-            language = 'Ru'
+            language = 'Ru';
             loadBodyRu();
-            localStorage.setItem('lang', language)
+            letterShift();
+            localStorage.setItem('lang', language);
         } else if (language === 'Ru') {
-            language = 'En'
+            language = 'En';
             loadBodyEn();
-            localStorage.setItem('lang', language)
+            letterShift();
+            localStorage.setItem('lang', language);
         } 
     }
     pressed.add(event.code);
     buttonAnimation(pressed);
-}
-
-// const buttonDown = (event) => {
-//     document.querySelectorAll('.button').forEach(el => {
-//             if(el.dataset.code === event.code){
-//                 if (CL && SH){
-//                     letterLower();
-//                 } 
-//                 if (selectionStart === lengthInput){
-//                     document.querySelector('.input').value += el.innerText.charAt(0);
-//                 } else {
-//                 //document.querySelector('.input').value = '';
-//                     document.querySelector('.input').value = `${start}${el.innerText.charAt(0)}${end}`;
-//                     position = `${start} `.length;
-//                     document.querySelector('.input').setSelectionRange(position, position);
-
-//                 }
-                
-//             }
-//     })
-// }      
+};
 
 const buttonAnimation = (pressed) => {
     pressed.forEach(code => {
@@ -777,9 +812,9 @@ const buttonAnimation = (pressed) => {
             if(el.dataset.code === code){
                 el.id = 'button_active';
             }
-        })
-    })
-}
+        });
+    });
+};
 
 const letterLower = () => {
    if(language === 'En'){
@@ -788,7 +823,7 @@ const letterLower = () => {
                 let i = el.innerHTML.toLocaleLowerCase();
                 el.innerHTML = i;
             }
-        })
+        });
     } else if (language === 'Ru'){
         document.querySelectorAll('.button').forEach(el => {
             if (el.dataset.code.slice(0, -1) === 'Key' ||
@@ -802,9 +837,9 @@ const letterLower = () => {
                 let i = el.innerHTML.toLocaleLowerCase();
                 el.innerHTML = i;
             }
-        })
+        });
     }
-}
+};
 
 const letterUpper = () => {
     if(language === 'En'){
@@ -814,7 +849,7 @@ const letterUpper = () => {
                 let i = el.innerHTML.toLocaleUpperCase();
                 el.innerHTML = i;
             }
-        })
+        });
     } else if (language === 'Ru'){
         document.querySelectorAll('.button').forEach(el => {
             if (el.dataset.code.slice(0, -1) === 'Key' ||
@@ -828,9 +863,9 @@ const letterUpper = () => {
                 let i = el.innerHTML.toLocaleUpperCase();
                 el.innerHTML = i;
             }
-        })
+        });
     }
-}
+};
 
 const letterShift = () =>{
     if(language === 'En'){
@@ -852,7 +887,7 @@ const letterShift = () =>{
                     el.innerHTML = j + el.innerHTML.substring(el.innerHTML.search(' '));
                     el.querySelector('.second').innerHTML = i;
             }
-        })
+        });
     } else if (language === 'Ru'){
         document.querySelectorAll('.button').forEach(el => {
             if (el.dataset.code.slice(0, -1) === 'Digit'||
@@ -865,6 +900,6 @@ const letterShift = () =>{
                     el.innerHTML = j + el.innerHTML.substring(el.innerHTML.search(' '));
                     el.querySelector('.second').innerHTML = i;
             }
-        })
+        });
     }
-}
+};
