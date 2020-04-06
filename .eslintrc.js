@@ -4,7 +4,8 @@ module.exports = {
         "es6": true,
         "node": true
     },
-    "extends": "eslint:recommended",
+    //"extends": "eslint:recommended",
+    "extends": "airbnb-base/legacy",
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -14,8 +15,12 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
-        "no-console": "warn",
-        "semi": ["warn", "always"],
+         "space-before-blocks": "off",
+         "indent": "off",
+         "linebreak-style" : "off",
+         "key-spacing" : "off"
+
+        // "semi": ["warn", "always"],
         //"quotes": ["error", "double"]
     }
 };
