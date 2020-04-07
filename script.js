@@ -4,449 +4,449 @@ const keyboard = [
         keyRu: ['ё'],
         keyEn: ['`', '~'],
         code: 'Backquote',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 1,
         keyRu: ['1', '!'],
         keyEn: ['1', '!'],
         code: 'Digit1',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 2,
         keyRu: ['2', '"'],
         keyEn: ['2', '@'],
         code: 'Digit2',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 3,
         keyRu: ['3', '№'],
         keyEn: ['3', '#'],
         code: 'Digit3',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 4,
         keyRu: ['4', ';'],
         keyEn: ['4', '$'],
         code: 'Digit4',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 5,
         keyRu: ['5', '%'],
         keyEn: ['5', '%'],
         code: 'Digit5',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 6,
         keyRu: ['6', ':'],
         keyEn: ['6', '^'],
         code: 'Digit6',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 7,
         keyRu: ['7', '?'],
         keyEn: ['7', '&'],
         code: 'Digit7',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 8,
         keyRu: ['8', '*'],
         keyEn: ['8', '*'],
         code: 'Digit8',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 9,
         keyRu: ['9', '('],
         keyEn: ['9', '('],
         code: 'Digit9',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 10,
         keyRu: ['0', ')'],
         keyEn: ['0', ')'],
         code: 'Digit0',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 11,
         keyRu: ['-', '_'],
         keyEn: ['-', '_'],
         code: 'Minus',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 12,
         keyRu: ['=', '+'],
         keyEn: ['=', '+'],
         code: 'Equal',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 13,
         keyRu: ['Backspace'],
         keyEn: ['Backspace'],
         code: 'Backspace',
-        classButton: ['button', 'button_backspace']
+        classButton: ['button', 'button_backspace'],
     },
     {
         id: 14,
         keyRu: ['Tab'],
         keyEn: ['Tab'],
         code: 'Tab',
-        classButton: ['button', 'button_tab']
+        classButton: ['button', 'button_tab'],
     },
     {
         id: 15,
         keyRu: ['й'],
         keyEn: ['q'],
         code: 'KeyQ',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 16,
         keyRu: ['ц'],
         keyEn: ['w'],
         code: 'KeyW',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 17,
         keyRu: ['у'],
         keyEn: ['e'],
         code: 'KeyE',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 18,
         keyRu: ['к'],
         keyEn: ['r'],
         code: 'KeyR',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 19,
         keyRu: ['е'],
         keyEn: ['t'],
         code: 'KeyT',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 20,
         keyRu: ['н'],
         keyEn: ['y'],
         code: 'KeyY',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 21,
         keyRu: ['г'],
         keyEn: ['u'],
         code: 'KeyU',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 22,
         keyRu: ['ш'],
         keyEn: ['i'],
         code: 'KeyI',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 23,
         keyRu: ['щ'],
         keyEn: ['o'],
         code: 'KeyO',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 24,
         keyRu: ['з'],
         keyEn: ['p'],
         code: 'KeyP',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 25,
         keyRu: ['х'],
         keyEn: ['[', '{'],
         code: 'BracketLeft',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 26,
         keyRu: ['ъ'],
         keyEn: [']', '}'],
         code: 'BracketRight',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 27,
         keyRu: ['\\', '/'],
         keyEn: ['\\', '|'],
         code: 'Backslash',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 43,
         keyRu: ['Del'],
         keyEn: ['Del'],
         code: 'Delete',
-        classButton: ['button', 'button_delete']
+        classButton: ['button', 'button_delete'],
     },
     {
         id: 28,
         keyRu: ['CapsLock'],
         keyEn: ['CapsLock'],
         code: 'CapsLock',
-        classButton: ['button', 'button_caps_lock']
+        classButton: ['button', 'button_caps_lock'],
     },
     {
         id: 29,
         keyRu: ['ф'],
         keyEn: ['a'],
         code: 'KeyA',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 31,
         keyRu: ['ы'],
         keyEn: ['s'],
         code: 'KeyS',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 32,
         keyRu: ['в'],
         keyEn: ['d'],
         code: 'KeyD',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 33,
         keyRu: ['а'],
         keyEn: ['f'],
         code: 'KeyF',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 34,
         keyRu: ['п'],
         keyEn: ['g'],
         code: 'KeyG',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 35,
         keyRu: ['р'],
         keyEn: ['h'],
         code: 'KeyH',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 36,
         keyRu: ['о'],
         keyEn: ['j'],
         code: 'KeyJ',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 37,
         keyRu: ['л'],
         keyEn: ['k'],
         code: 'KeyK',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 38,
         keyRu: ['д'],
         keyEn: ['l'],
         code: 'KeyL',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 39,
         keyRu: ['ж'],
         keyEn: [';', ':'],
         code: 'Semicolon',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 40,
         keyRu: ['э'],
         keyEn: ['\'', '"'],
         code: 'Quote',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 41,
         keyRu: ['Enter'],
         keyEn: ['Enter'],
         code: 'Enter',
-        classButton: ['button', 'button_enter']
+        classButton: ['button', 'button_enter'],
     },
     {
         id: 42,
         keyRu: ['Shift'],
         keyEn: ['Shift'],
         code: 'ShiftLeft',
-        classButton: ['button', 'button_shift']
+        classButton: ['button', 'button_shift'],
     },
     {
         id: 44,
         keyRu: ['я'],
         keyEn: ['z'],
         code: 'KeyZ',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 45,
         keyRu: ['ч'],
         keyEn: ['x'],
         code: 'KeyX',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 46,
         keyRu: ['с'],
         keyEn: ['c'],
         code: 'KeyC',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 47,
         keyRu: ['м'],
         keyEn: ['v'],
         code: 'KeyV',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 48,
         keyRu: ['и'],
         keyEn: ['b'],
         code: 'KeyB',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 49,
         keyRu: ['т'],
         keyEn: ['n'],
         code: 'KeyN',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 50,
         keyRu: ['ь'],
         keyEn: ['m'],
         code: 'KeyM',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 51,
         keyRu: ['б'],
         keyEn: [',', '<'],
         code: 'Comma',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 52,
         keyRu: ['ю'],
         keyEn: ['.', '>'],
         code: 'Period',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 53,
         keyRu: ['.', ','],
         keyEn: ['/', '?'],
         code: 'Slash',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 54,
         keyRu: ['↑'],
         keyEn: ['↑'],
         code: 'ArrowUp',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 55,
         keyRu: ['Shift'],
         keyEn: ['Shift'],
         code: 'ShiftRight',
-        classButton: ['button', 'button_shift']
+        classButton: ['button', 'button_shift'],
     },
     {
         id: 56,
         keyRu: ['Ctrl'],
         keyEn: ['Ctrl'],
         code: 'ControlLeft',
-        classButton: ['button', 'button_ctrl']
+        classButton: ['button', 'button_ctrl'],
     },
     {
         id: 57,
         keyRu: ['Win'],
         keyEn: ['Win'],
         code: 'Meta',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 58,
         keyRu: ['Alt'],
         keyEn: ['Alt'],
         code: 'AltLeft',
-        classButton: ['button', 'button_alt']
+        classButton: ['button', 'button_alt'],
     },
     {
         id: 59,
         keyRu: [' '],
         keyEn: [' '],
         code: 'Space',
-        classButton: ['button', 'button_space']
+        classButton: ['button', 'button_space'],
     },
     {
         id: 60,
         keyRu: ['Alt'],
         keyEn: ['Alt'],
         code: 'AltRight',
-        classButton: ['button', 'button_alt']
+        classButton: ['button', 'button_alt'],
     },
     {
         id: 61,
         keyRu: ['←'],
         keyEn: ['←'],
         code: 'ArrowLeft',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 62,
         keyRu: ['↓'],
         keyEn: ['↓'],
         code: 'ArrowDown',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 63,
         keyRu: ['→'],
         keyEn: ['→'],
         code: 'ArrowRight',
-        classButton: ['button']
+        classButton: ['button'],
     },
     {
         id: 64,
         keyRu: ['Ctrl'],
         keyEn: ['Ctrl'],
         code: 'ControlRight',
-        classButton: ['button', 'button_ctrl']
-    }
+        classButton: ['button', 'button_ctrl'],
+    },
 ];
 
 let CL = false;
@@ -454,7 +454,7 @@ let SH = false;
 let AL = false;
 let position;
 let positionEnd;
-let pressed = new Set();
+const pressed = new Set();
 let language = localStorage.getItem('lang');
 
 function loadBody() {
@@ -464,9 +464,9 @@ function loadBody() {
 }
 function loadBodyRu() {
     document.querySelector('.keyboard').innerHTML = '';
-    keyboard.forEach(el => {
+    keyboard.forEach((el) => {
         let classButton = '';
-        el.classButton.forEach(elem => {
+        el.classButton.forEach((elem) => {
             classButton += ` ${elem}`;
         });
         let letter = '';
@@ -488,11 +488,11 @@ function loadBodyRu() {
     });
 }
 
-const loadBodyEn = () =>{
+const loadBodyEn = () => {
     document.querySelector('.keyboard').innerHTML = '';
-    keyboard.forEach(el => {
+    keyboard.forEach((el) => {
         let classButton = '';
-        el.classButton.forEach(elem => {
+        el.classButton.forEach((elem) => {
             classButton += ` ${elem}`;
         });
         let letter = '';
@@ -513,15 +513,15 @@ const loadBodyEn = () =>{
         }
     });
 };
-const pos = () =>{
-    document.querySelector('.input').addEventListener('click', ()=>{
+const pos = () => {
+    document.querySelector('.input').addEventListener('click', () => {
         position = document.querySelector('.input').selectionStart;
         positionEnd = document.querySelector('.input').selectionEnd;
     });
 };
 const buttonAnimation = (pres) => {
-    pres.forEach(code => {
-        document.querySelectorAll('.button').forEach(el => {
+    pres.forEach((code) => {
+        document.querySelectorAll('.button').forEach((el) => {
             if (el.dataset.code === code) {
                 el.id = 'button_active';
             }
@@ -531,16 +531,16 @@ const buttonAnimation = (pres) => {
 
 const letterLower = () => {
     if (language === 'En') {
-        document.querySelectorAll('.button').forEach(el => {
+        document.querySelectorAll('.button').forEach((el) => {
             if (el.dataset.code.slice(0, -1) === 'Key') {
-                let i = el.innerHTML.toLocaleLowerCase();
+                const i = el.innerHTML.toLocaleLowerCase();
                 el.innerHTML = i;
             }
         });
     } else if (language === 'Ru') {
-        document.querySelectorAll('.button').forEach(el => {
+        document.querySelectorAll('.button').forEach((el) => {
             if (el.dataset.code.slice(0, -1) === 'Key' || el.dataset.code === 'Period' || el.dataset.code === 'Backquote' || el.dataset.code === 'BracketLeft' || el.dataset.code === 'BracketRight' || el.dataset.code === 'Semicolon' || el.dataset.code === 'Quote' || el.dataset.code === 'Comma') {
-                let i = el.innerHTML.toLocaleLowerCase();
+                const i = el.innerHTML.toLocaleLowerCase();
                 el.innerHTML = i;
             }
         });
@@ -549,37 +549,37 @@ const letterLower = () => {
 
 const letterUpper = () => {
     if (language === 'En') {
-        document.querySelectorAll('.button').forEach(el => {
+        document.querySelectorAll('.button').forEach((el) => {
             if (el.dataset.code.slice(0, -1) === 'Key') {
-                let i = el.innerHTML.toLocaleUpperCase();
+                const i = el.innerHTML.toLocaleUpperCase();
                 el.innerHTML = i;
             }
         });
     } else if (language === 'Ru') {
-        document.querySelectorAll('.button').forEach(el => {
+        document.querySelectorAll('.button').forEach((el) => {
             if (el.dataset.code.slice(0, -1) === 'Key' || el.dataset.code === 'Period' || el.dataset.code === 'Backquote' || el.dataset.code === 'BracketLeft' || el.dataset.code === 'BracketRight' || el.dataset.code === 'Semicolon' || el.dataset.code === 'Quote' || el.dataset.code === 'Comma') {
-                let i = el.innerHTML.toLocaleUpperCase();
+                const i = el.innerHTML.toLocaleUpperCase();
                 el.innerHTML = i;
             }
         });
     }
 };
 
-const letterShift = () =>{
+const letterShift = () => {
     if (language === 'En') {
-        document.querySelectorAll('.button').forEach(el => {
+        document.querySelectorAll('.button').forEach((el) => {
             if (el.dataset.code.slice(0, -1) === 'Digit' || el.dataset.code === 'Minus' || el.dataset.code === 'Equal' || el.dataset.code === 'Slash' || el.dataset.code === 'Period' || el.dataset.code === 'Backquote' || el.dataset.code === 'BracketLeft' || el.dataset.code === 'BracketRight' || el.dataset.code === 'Semicolon' || el.dataset.code === 'Quote' || el.dataset.code === 'Comma' || el.dataset.code === 'Backslash') {
-                let i = el.innerHTML.substring(0, el.innerHTML.search(' '));
-                let j = el.querySelector('.second').innerHTML;
+                const i = el.innerHTML.substring(0, el.innerHTML.search(' '));
+                const j = el.querySelector('.second').innerHTML;
                 el.innerHTML = j + el.innerHTML.substring(el.innerHTML.search(' '));
                 el.querySelector('.second').innerHTML = i;
             }
         });
     } else if (language === 'Ru') {
-        document.querySelectorAll('.button').forEach(el => {
+        document.querySelectorAll('.button').forEach((el) => {
             if (el.dataset.code.slice(0, -1) === 'Digit' || el.dataset.code === 'Minus' || el.dataset.code === 'Equal' || el.dataset.code === 'Slash' || el.dataset.code === 'Backslash') {
-                let i = el.innerHTML.substring(0, el.innerHTML.search(' '));
-                let j = el.querySelector('.second').innerHTML;
+                const i = el.innerHTML.substring(0, el.innerHTML.search(' '));
+                const j = el.querySelector('.second').innerHTML;
                 el.innerHTML = j + el.innerHTML.substring(el.innerHTML.search(' '));
                 el.querySelector('.second').innerHTML = i;
             }
@@ -587,7 +587,7 @@ const letterShift = () =>{
     }
 };
 const switchDown = (event) => {
-    let lengthInput = document.querySelector('.input').value.length;
+    const lengthInput = document.querySelector('.input').value.length;
     let start = document.querySelector('.input').value.substring(0, position);
     let end = document.querySelector('.input').value.substring(position);
     switch (event.code) {
@@ -720,7 +720,7 @@ const switchDown = (event) => {
         document.querySelector('.input').setSelectionRange(position, position);
         break;
     default:
-        document.querySelectorAll('.button').forEach(el => {
+        document.querySelectorAll('.button').forEach((el) => {
             if (el.dataset.code === event.code) {
                 if (CL && SH) {
                     letterLower();
@@ -757,7 +757,7 @@ const switchDown = (event) => {
 };
 
 const click = () => {
-    document.querySelector('.keyboard').addEventListener('mousedown', (event) =>{
+    document.querySelector('.keyboard').addEventListener('mousedown', (event) => {
         if (event.target.classList.contains('button')) {
             switchDown(event.target.dataset);
         }
@@ -778,7 +778,7 @@ const click = () => {
             if (event.target.dataset.code === 'AltLeft' || event.target.dataset.code === 'AltRight') {
                 AL = false;
             }
-            document.querySelectorAll('.button').forEach(el => {
+            document.querySelectorAll('.button').forEach((el) => {
                 if (el.dataset.code === event.target.dataset.code) {
                     if (event.target.dataset.code === 'CapsLock') {
                         if (!CL) {
@@ -821,7 +821,7 @@ const keyBoard = () => {
         if (event.code === 'AltLeft' || event.code === 'AltRight') {
             AL = false;
         }
-        document.querySelectorAll('.button').forEach(el => {
+        document.querySelectorAll('.button').forEach((el) => {
             if (el.dataset.code === event.code) {
                 if (event.code === 'CapsLock') {
                     if (!CL) {
@@ -839,7 +839,6 @@ const keyBoard = () => {
         pressed.delete(event.code);
     });
 };
-
 
 window.onload = () => {
     if (language) {
